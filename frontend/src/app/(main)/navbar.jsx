@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
   return (
    <div>
-     <header className="fixed w-full">
+   <header className="fixed w-full">
     <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
         <a href="#" className="flex items-center">
@@ -20,13 +20,13 @@ const Navbar = () => {
           <div className="hidden mt-2 mr-4 sm:inline-block">
             <a
               className="github-button"
-              href="https://github.com/themesberg/landwind"
+              href="/signup"
               data-size="large"
               data-icon="octicon-star"
               data-show-count="true"
               aria-label="Star themesberg/landwind on GitHub"
             >
-              Star
+              Signup
             </a>
           </div>
           {/* <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a> */}

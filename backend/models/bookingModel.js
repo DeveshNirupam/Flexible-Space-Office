@@ -1,12 +1,13 @@
 const {model, Schema} = require('../connection');
 
 const mySchema = new Schema({
-    name : {type : String, require: true},
-    email : {type : String, require: true, unique: true},
-    password: String,
-    avatar: {type : String, default: 'placeholder.png'},
-    role: {type : String, default: 'user'},
-    createdAt: {type : Date, default: Date.now}
+    booking_id : {type:Number, require: true},
+    user_id : {type: String, require: true},
+    property_id : number,
+    check_in_date : Date,
+    Check_out_date : Date,
+    total_price : Number,
+    booking_status : String,
 });
 
-module.exports = model('flexiblespaces', mySchema);
+module.exports = model('bookingspaces', mySchema);
