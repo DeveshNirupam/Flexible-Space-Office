@@ -1,7 +1,7 @@
 const {model, Schema} = require('../connection');
 
 const mySchema = new Schema({
-    name : {type : String, require: true},
+    location : {type : String, require: true},
     email : {type : String, require: true, unique: true},
     password: String,
     avatar: {type : String, default: 'placeholder.png'},
@@ -9,4 +9,4 @@ const mySchema = new Schema({
     createdAt: {type : Date, default: Date.now}
 });
 
-module.exports = model('user', mySchema);
+module.exports = model('flexiblespaces', mySchema);

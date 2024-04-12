@@ -1,6 +1,27 @@
 import React from 'react'
 
 const Login = () => {
+
+    const loginValidationSchema = Yup.object().shape({
+      email : Yup.string().email('ye kaisa email hai').required('email nhi hai tumhara'),
+      password : Yup.string().required('password nhi hai tumhara')
+    });
+  
+    const loginForm = useFormik({
+      initialValues: {
+        email: '',
+        password: ''
+      },
+      onSubmit: (values) => {
+        console.log(values);
+        // send data to backend
+      },
+      validationSchema: loginValidationSchema
+    });
+
+
+
+
   return (
     <div><main className="w-full max-w-md mx-auto p-6">
     <div className="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
@@ -54,7 +75,7 @@ const Login = () => {
             Or
           </div>
           {/* Form */}
-          <form>
+          <form onSubmit={loginForm.handleSubmit}>
             <div className="grid gap-y-4">
               {/* Form Group */}
               <div>
@@ -68,6 +89,8 @@ const Login = () => {
                   <input
                     type="email"
                     id="email"
+                    onChange={loginForm.handleChange}
+                    value={loginForm.values.email}
                     name="email"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                     required=""
@@ -111,6 +134,8 @@ const Login = () => {
                   <input
                     type="password"
                     id="password"
+                    onChange={loginForm.handleChange}
+                    value={loginForm.values.password}
                     name="password"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                     required=""

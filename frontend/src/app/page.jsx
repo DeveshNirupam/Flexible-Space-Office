@@ -15,7 +15,7 @@ const Home = () => {
             alt="Landwind Logo"
           />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Landwind
+            FlexSpaceFlow
           </span>
         </a>
         <div className="flex items-center lg:order-2">
@@ -28,7 +28,7 @@ const Home = () => {
               data-show-count="true"
               aria-label="Star themesberg/landwind on GitHub"
             >
-              Star
+              Signup
             </a>
           </div>
           {/* <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a> */}
@@ -91,15 +91,15 @@ const Home = () => {
                 href="#"
                 className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
-                Company
+                About
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="/login"
                 className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
-                Marketplace
+                Login
               </a>
             </li>
             <li>
@@ -120,7 +120,7 @@ const Home = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/contact"
                 className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Contact
@@ -136,27 +136,11 @@ const Home = () => {
     <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
       <div className="mr-auto place-self-center lg:col-span-7">
         <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
-          Building digital <br />
-          products &amp; brands.
+          Welcome to <u>FlexSpaceFlow</u> <br />  Redefining workspaces
+         
         </h1>
         <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-          This free and open-source landing page template was built using the
-          utility classes from{" "}
-          <a href="https://tailwindcss.com" className="hover:underline">
-            Tailwind CSS
-          </a>{" "}
-          and based on the components from the{" "}
-          <a
-            href="https://flowbite.com/docs/getting-started/introduction/"
-            className="hover:underline"
-          >
-            Flowbite Library
-          </a>{" "}
-          and the{" "}
-          <a href="https://flowbite.com/blocks/" className="hover:underline">
-            Blocks System
-          </a>
-          .
+        Welcome to the future of work. Discover a new way to work with flexible office spaces designed to inspire creativity, foster collaboration, and elevate productivity. At FlexSpaceFlow , we're committed to providing you with the perfect environment to thrive in.
         </p>
         <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
           <a
@@ -451,12 +435,10 @@ const Home = () => {
       <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
         <div className="text-gray-500 sm:text-lg dark:text-gray-400">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-            Work with tools you already use
+            Why choose us ?
           </h2>
           <p className="mb-8 font-light lg:text-xl">
-            Deliver great service experiences fast - without the complexity of
-            traditional ITSM solutions. Accelerate critical development work,
-            eliminate toil, and deploy changes with ease.
+          We understand that your workspace is more than just a place to work—it's the foundation for your success. Here's why discerning professionals like you choose us:
           </p>
           {/* List */}
           <ul
@@ -478,7 +460,7 @@ const Home = () => {
                 />
               </svg>
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Continuous integration and deployment
+               Flexibility
               </span>
             </li>
             <li className="flex space-x-3">
@@ -496,7 +478,7 @@ const Home = () => {
                 />
               </svg>
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Development workflow
+                Prime Locations
               </span>
             </li>
             <li className="flex space-x-3">
@@ -514,13 +496,30 @@ const Home = () => {
                 />
               </svg>
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Knowledge management
+              Modern Amenities
+              </span>
+            </li>
+            <li className="flex space-x-3">
+              {/* Icon */}
+              <svg
+                className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                Community & Networking
               </span>
             </li>
           </ul>
           <p className="mb-8 font-light lg:text-xl">
-            Deliver great service experiences fast - without the complexity of
-            traditional ITSM solutions.
+            Deliver great service experiences fast - without the complexity.
           </p>
         </div>
         <img
@@ -538,12 +537,10 @@ const Home = () => {
         />
         <div className="text-gray-500 sm:text-lg dark:text-gray-400">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-            We invest in the world’s potential
+            How it Works
           </h2>
           <p className="mb-8 font-light lg:text-xl">
-            Deliver great service experiences fast - without the complexity of
-            traditional ITSM solutions. Accelerate critical development work,
-            eliminate toil, and deploy changes with ease.
+          Experience the freedom, flexibility, and convenience of a workspace designed for modern professionals like you. With [Your Company Name], finding your perfect workspace has never been easier.
           </p>
           {/* List */}
           <ul
@@ -565,7 +562,7 @@ const Home = () => {
                 />
               </svg>
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Dynamic reports and dashboards
+               Explore our spaces
               </span>
             </li>
             <li className="flex space-x-3">
@@ -583,7 +580,7 @@ const Home = () => {
                 />
               </svg>
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Templates for everyone
+                Book your space
               </span>
             </li>
             <li className="flex space-x-3">
@@ -601,7 +598,7 @@ const Home = () => {
                 />
               </svg>
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Development workflow
+               Arrive and thrive
               </span>
             </li>
             <li className="flex space-x-3">
@@ -642,8 +639,7 @@ const Home = () => {
             </li>
           </ul>
           <p className="font-light lg:text-xl">
-            Deliver great service experiences fast - without the complexity of
-            traditional ITSM solutions.
+          Feel free to customize this statement to align with the specific features and booking process of your flexible office space website.
           </p>
         </div>
       </div>
@@ -658,7 +654,7 @@ const Home = () => {
           Trusted Worldwide
         </p>
         <h2 className="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl dark:text-white">
-          Trusted by over 600 million users and 10,000 teams
+          Trusted by over 10 million users and 1000 teams
         </h2>
         <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
           Our rigorous security and compliance standards are at the heart of all
@@ -725,7 +721,7 @@ const Home = () => {
             99.99% uptime
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
-            For Landwind, with zero maintenance downtime
+            For FlexSpaceFlow, with zero maintenance downtime
           </p>
         </div>
         <div>
@@ -738,10 +734,10 @@ const Home = () => {
             <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
           </svg>
           <h3 className="mb-2 text-2xl font-bold dark:text-white">
-            600M+ Users
+            10M+ Users
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
-            Trusted by over 600 milion users around the world
+            Trusted by over 10 milion users around the world
           </p>
         </div>
         <div>
@@ -761,7 +757,7 @@ const Home = () => {
             100+ countries
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
-            Have used Landwind to create functional websites
+            Have used FlexSpaceFlow to create functional websites
           </p>
         </div>
         <div>
@@ -774,7 +770,7 @@ const Home = () => {
             <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
           </svg>
           <h3 className="mb-2 text-2xl font-bold dark:text-white">
-            5+ Million
+            10k
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
             Transactions per day
@@ -801,9 +797,7 @@ const Home = () => {
         </svg>
         <blockquote>
           <p className="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">
-            "Landwind is just awesome. It contains tons of predesigned
-            components and pages starting from login screen to complex
-            dashboard. Perfect choice for your next SaaS application."
+          "Empower your work life with flexibility, inspiration, and community. At FlexSpaceFLow, we redefine the way you work. Discover spaces tailored to your needs, ignite your creativity, and thrive in a vibrant community of professionals. Your ideal workspace awaits."
           </p>
         </blockquote>
         <figcaption className="flex items-center justify-center mt-6 space-x-3">
@@ -814,10 +808,10 @@ const Home = () => {
           />
           <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
             <div className="pr-3 font-medium text-gray-900 dark:text-white">
-              Micheal Gough
+              Devesh Nirupam
             </div>
             <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
-              CEO at Google
+              CEO at FlexSpaceFlow
             </div>
           </div>
         </figcaption>
@@ -830,11 +824,10 @@ const Home = () => {
     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
       <div className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
         <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-          Designed for business teams like yours
+          Designed for professionals like yours
         </h2>
         <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-          Here at Landwind we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+          Here at FlexSpaceFlow the focus is to make work easier and more convenient for everyone. These spaces are designed to be adaptable, so they can change according to what people need.
         </p>
       </div>
       <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
@@ -1186,7 +1179,7 @@ const Home = () => {
               aria-expanded="true"
               aria-controls="accordion-flush-body-1"
             >
-              <span>Can I use Landwind in open-source projects?</span>
+              <span>Who can benefit from flexspaceFlow ?</span>
               <svg
                 data-accordion-icon=""
                 className="w-6 h-6 rotate-180 shrink-0"
@@ -1209,21 +1202,9 @@ const Home = () => {
           >
             <div className="py-5 border-b border-gray-200 dark:border-gray-700">
               <p className="mb-2 text-gray-500 dark:text-gray-400">
-                Landwind is an open-source library of interactive components
-                built on top of Tailwind CSS including buttons, dropdowns,
-                modals, navbars, and more.
+              FlexSpaceFlow is suitable for a wide range of professionals and businesses, including freelancers, startups, remote workers, small businesses, and larger corporations. It offers solutions for those seeking agility, cost-effectiveness, and community engagement in their workspace.
               </p>
-              <p className="text-gray-500 dark:text-gray-400">
-                Check out this guide to learn how to{" "}
-                <a
-                  href="#"
-                  className="text-purple-600 dark:text-purple-500 hover:underline"
-                >
-                  get started
-                </a>{" "}
-                and start developing websites even faster with components on top
-                of Tailwind CSS.
-              </p>
+              
             </div>
           </div>
           <h3 id="accordion-flush-heading-2">
@@ -1234,7 +1215,7 @@ const Home = () => {
               aria-expanded="false"
               aria-controls="accordion-flush-body-2"
             >
-              <span>Is there a Figma file available?</span>
+              <span>What types of spaces are available?</span>
               <svg
                 data-accordion-icon=""
                 className="w-6 h-6 shrink-0"
@@ -1283,7 +1264,7 @@ const Home = () => {
               aria-controls="accordion-flush-body-3"
             >
               <span>
-                What are the differences between Landwind and Tailwind UI?
+              Can I use the space for meetings or events?
               </span>
               <svg
                 data-accordion-icon=""
@@ -1419,7 +1400,7 @@ const Home = () => {
           Start your free trial today
         </h2>
         <p className="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">
-          Try Landwind Platform for 30 days. No credit card required.
+          Try FlexSpaceFlow for 30 days. No credit card required.
         </p>
         <a
           href="#"
@@ -1440,7 +1421,7 @@ const Home = () => {
           </h3>
           <ul className="text-gray-500 dark:text-gray-400">
             <li className="mb-4">
-              <a href="#" className=" hover:underline">
+              <a href="/about" className=" hover:underline">
                 About
               </a>
             </li>
@@ -1482,7 +1463,7 @@ const Home = () => {
               </a>
             </li>
             <li className="mb-4">
-              <a href="#" className="hover:underline">
+              <a href="/contact" className="hover:underline">
                 Contact Us
               </a>
             </li>
@@ -1572,14 +1553,14 @@ const Home = () => {
           className="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
         >
           <img
-            src="./images/logo.svg"
+            src="/logo 1.png"
             className="h-6 mr-3 sm:h-9"
             alt="Landwind Logo"
           />
-          Landwind
+         FlexSpaceFow
         </a>
         <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
-          © 2021-2022 Landwind™. All Rights Reserved. Built with{" "}
+          © 2021-2022 FlexSpaceFlow™. All Rights Reserved. Built with{" "}
           <a
             href="https://flowbite.com"
             className="text-purple-600 hover:underline dark:text-purple-500"

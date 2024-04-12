@@ -1,6 +1,48 @@
+'use client';
 import React from 'react'
+import { useFormik } from 'formik';
+import toast from 'react-hot-toast';
 
 const Signup = () => {
+
+  const signupForm = useFormik({
+    initialValues: {
+      email: '',
+      name: '',
+      password: '',
+      confirmPassword: ''
+    },
+    onSubmit: (values) => {
+      console.log(values);
+      
+      // sending request to client
+
+      fetch('http://localhost:5000/user/add', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type' : 'application/json'
+        }
+      })
+      .then((response) => {
+        console.log(response.status);
+        if(response.status === 200){
+          toast.success('user registered successfully')
+        }else{
+          toast.error('user registration failed')
+        }
+      }).catch((err) => {
+        console.log(err);
+        toast.error('user registration failed')
+      });
+
+    }
+  })
+
+
+
+
+  
   return (
     <div>
      <main className="w-full max-w-md mx-auto p-6">
@@ -55,7 +97,7 @@ const Signup = () => {
           Or
         </div>
         {/* Form */}
-        <form>
+        <form onSubmit= {signupForm.handleSubmit}>
           <div className="grid gap-y-4">
             {/* Form Group */}
             <div>
@@ -69,9 +111,9 @@ const Signup = () => {
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  onChange={signupForm.handleChange}
+                  value={signupForm.values.email}
                   className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                  required=""
                   aria-describedby="email-error"
                 />
                 <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
@@ -104,7 +146,8 @@ const Signup = () => {
                 <input
                   type="password"
                   id="password"
-                  name="password"
+                  onChange={signupForm.handleChange}
+                  value={signupForm.values.password}
                   className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   required=""
                   aria-describedby="password-error"
@@ -133,7 +176,7 @@ const Signup = () => {
             {/* Form Group */}
             <div>
               <label
-                htmlFor="confirm-password"
+                htmlFor="confirmPassword"
                 className="block text-sm mb-2 dark:text-white"
               >
                 Confirm Password
@@ -141,8 +184,9 @@ const Signup = () => {
               <div className="relative">
                 <input
                   type="password"
-                  id="confirm-password"
-                  name="confirm-password"
+                  id="confirmPassword"
+                  onChange={signupForm.handleChange}
+                  value={signupForm.values.confirmPassword}
                   className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   required=""
                   aria-describedby="confirm-password-error"
