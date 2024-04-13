@@ -1,6 +1,42 @@
+import { useFormik } from 'formik';
 import React from 'react'
 
 const Contact = () => {
+
+  const contactForm = useFormik({
+    initialValues: {
+      email: '',
+      name: '',
+      password: '',
+      confirmPassword: ''
+    },
+    onSubmit: (values, {resetForm}) => {
+      console.log(values);
+      // resetForm()
+      // sending request to client
+
+      fetch('http://localhost:5000/contact/add', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type' : 'application/json'
+        }
+      })
+      .then((response) => {
+        console.log(response.status);
+        if(response.status === 200){
+          toast.success('user registered successfully')
+         
+        }else{
+          toast.error('user registration failed')
+        }
+      }).catch((err) => {
+        console.log(err);
+        toast.error('user registration failed')
+      });
+
+    }
+  })
   return (
     <div><>
     {/* Contact Us */}

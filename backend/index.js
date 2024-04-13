@@ -1,23 +1,27 @@
-
-//import
-const express = require('express');
-
-//initialize
+const express = require("express")
 const app = express();
-
-const postRouter = require('./postRouter');
-
-//middleware
-app.use('/post', postRouter);
-
 const port = 5000;
 
-app.get('/' , (req , res) => {
-    res.send('response from express');
-});
+const cors = require("cors")
 
-app.get('/add', (req , res) => {
-    res.send('response from add express');
+const UserRouter = require("./routers/userRouter")
+const SpaceRouter = require("./routers/spaceRouter")
+const BookingRouter = require("./routers/bookingrouter")
+const ContactRouter = require("/routers/contactRouter")
+
+app.use(express.json())
+app.use(cors( {
+    origin: ["http://localhost:3000"]
+}))
+
+app.use("/user", UserRouter)
+app.use("/flexiblespaces", SpaceRouter)
+app.use("/bookingspaces", BookingRouter)
+app.use("/contact", ContactRouter )
+
+
+
+
+app.listen(port,() => {
+    console.log("server started");
 })
-
-app.listen(port ,() => { console.log('express server started now');});

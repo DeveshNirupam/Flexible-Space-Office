@@ -9,7 +9,7 @@ router.post('/add', (req, res) => {
     .then((result) => {
         res.status(200).json(result);
     }).catch((err) => {
-        res.status(500).json();
+        res.status(500).json(err);
     });
 });
 
@@ -35,6 +35,21 @@ router.delete('/delete/:id',(req,res) =>{
 
 
 })
+
+router.post("/authenticate", (req,res) => {
+    
+    Model.findOne(req.body)
+    .then((result) => {
+        console.log(result);
+        if(result){
+            res.status(200).json(result)
+        }else{
+            res.status(401).json({message:"invalide credential"})
+        }
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
+});
 
 
 module.exports = router;

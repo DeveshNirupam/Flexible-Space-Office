@@ -3,7 +3,11 @@ import React from 'react'
 import { useFormik } from 'formik';
 import toast from 'react-hot-toast';
 
+import { useRouter } from 'next/navigation';
+
 const Signup = () => {
+
+  const router = useRouter();
 
   const signupForm = useFormik({
     initialValues: {
@@ -12,9 +16,9 @@ const Signup = () => {
       password: '',
       confirmPassword: ''
     },
-    onSubmit: (values) => {
+    onSubmit: (values, {resetForm}) => {
       console.log(values);
-      
+      // resetForm()
       // sending request to client
 
       fetch('http://localhost:5000/user/add', {
@@ -28,6 +32,7 @@ const Signup = () => {
         console.log(response.status);
         if(response.status === 200){
           toast.success('user registered successfully')
+         router.push("/login")
         }else{
           toast.error('user registration failed')
         }
@@ -116,6 +121,10 @@ const Signup = () => {
                   className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   aria-describedby="email-error"
                 />
+                {
+                  signupForm.touched.email &&
+                  <span className="text-red">{signupForm.errors.email}</span>
+                }
                 <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                   <svg
                     className="size-5 text-red-500"
@@ -152,6 +161,10 @@ const Signup = () => {
                   required=""
                   aria-describedby="password-error"
                 />
+                 {
+                  signupForm.touched.password &&
+                  <span className="text-red">{signupForm.errors.password}</span>
+                }
                 <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                   <svg
                     className="size-5 text-red-500"
@@ -191,6 +204,10 @@ const Signup = () => {
                   required=""
                   aria-describedby="confirm-password-error"
                 />
+                 {
+                  signupForm.touched.confirmPassword &&
+                  <span className="text-red">{signupForm.errors.confirmPassword}</span>
+                }
                 <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                   <svg
                     className="size-5 text-red-500"

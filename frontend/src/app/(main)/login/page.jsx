@@ -1,4 +1,8 @@
+'use client';
+import { useFormik } from 'formik';
 import React from 'react'
+import toast from 'react-hot-toast';
+import * as Yup from 'yup'
 
 const Login = () => {
 
@@ -10,15 +14,35 @@ const Login = () => {
     const loginForm = useFormik({
       initialValues: {
         email: '',
-        password: ''
+        password: '',
+       
       },
-      onSubmit: (values) => {
+      onSubmit: (values, {resetForm}) => {
         console.log(values);
-        // send data to backend
-      },
-      validationSchema: loginValidationSchema
-    });
-
+        // resetForm()
+        // sending request to client
+  
+        fetch('http://localhost:5000/user/authenticate', {
+          method: 'POST',
+          body: JSON.stringify(values),
+          headers: {
+            'Content-Type' : 'application/json'
+          }
+        })
+        .then((response) => {
+          console.log(response.status);
+          if(response.status === 200){
+            toast.success('user loggedIn successfully')
+          }else{
+            toast.error('user login failed')
+          }
+        }).catch((err) => {
+          console.log(err);
+          toast.error('user login failed')
+        });
+  
+      }
+    })
 
 
 

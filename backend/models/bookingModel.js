@@ -3,7 +3,7 @@ const {model, Schema} = require('../connection');
 const mySchema = new Schema({
     booking_id : {type:Number, require: true},
     user_id : {type: String, require: true},
-    property_id : number,
+    property_id : Number,
     check_in_date : Date,
     Check_out_date : Date,
     total_price : Number,
