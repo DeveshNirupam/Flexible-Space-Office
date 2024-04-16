@@ -38,7 +38,7 @@ const ManageUser = () => {
                     >
                  {obj.name}
                     </th>
-                    
+                     
                     <td className="px-4 py-3">{obj.email}</td>
                     <td className="px-4 py-3">{obj.password}</td>
                     <td className="px-4 py-3">{obj.createdAt}</td>

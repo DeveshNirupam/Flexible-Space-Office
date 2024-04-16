@@ -138,7 +138,7 @@ const Contact = () => {
                     htmlFor="details"
                     className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                   >
-                    Detals
+                    Details
                   </label>
                   <textarea
                     type="text"
