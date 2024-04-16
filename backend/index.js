@@ -7,7 +7,7 @@ const cors = require("cors")
 const UserRouter = require("./routers/userRouter")
 const SpaceRouter = require("./routers/spaceRouter")
 const BookingRouter = require("./routers/bookingrouter")
-const ContactRouter = require("/routers/contactRouter")
+const ContactRouter = require("./routers/contactRouter")
 
 app.use(express.json())
 app.use(cors( {

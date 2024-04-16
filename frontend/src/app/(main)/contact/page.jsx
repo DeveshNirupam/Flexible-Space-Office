@@ -1,14 +1,17 @@
+'use client';
 import { useFormik } from 'formik';
 import React from 'react'
+import toast from 'react-hot-toast';
 
 const Contact = () => {
 
   const contactForm = useFormik({
     initialValues: {
+      FirstName: '',
+      LastName: '',
       email: '',
-      name: '',
-      password: '',
-      confirmPassword: ''
+      PhoneNumber: '',
+      Details: ''
     },
     onSubmit: (values, {resetForm}) => {
       console.log(values);
@@ -25,14 +28,14 @@ const Contact = () => {
       .then((response) => {
         console.log(response.status);
         if(response.status === 200){
-          toast.success('user registered successfully')
+          toast.success('contact added')
          
         }else{
-          toast.error('user registration failed')
+          toast.error('user added failed')
         }
       }).catch((err) => {
         console.log(err);
-        toast.error('user registration failed')
+        toast.error('contact added failed')
       });
 
     }
@@ -57,7 +60,7 @@ const Contact = () => {
           <h2 className="mb-8 text-xl font-semibold text-gray-800 dark:text-gray-200">
             Fill in the form
           </h2>
-          <form>
+          <form  onSubmit={contactForm.handleSubmit}>
             <div className="grid gap-4 lg:gap-6">
               {/* Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
@@ -70,8 +73,10 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="hs-firstname-contacts-1"
-                    id="hs-firstname-contacts-1"
+                    
+                    id="FirstName"
+                    onChange={contactForm.handleChange}
+                    value={contactForm.values.FirstName}
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   />
                 </div>
@@ -84,8 +89,10 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="hs-lastname-contacts-1"
-                    id="hs-lastname-contacts-1"
+                   
+                    id="LastName"
+                    onChange={contactForm.handleChange}
+                    value={contactForm.values.LastName}
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   />
                 </div>
@@ -102,8 +109,10 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
-                    name="hs-email-contacts-1"
-                    id="hs-email-contacts-1"
+                    
+                    id="email"
+                    onChange={contactForm.handleChange}
+                    value={contactForm.values.email}
                     autoComplete="email"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   />
@@ -117,28 +126,32 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="hs-phone-number-1"
-                    id="hs-phone-number-1"
+                    name="PhoneNumber"
+                    id="PhoneNumber"
+                    onChange={contactForm.handleChange}
+                    value={contactForm.values.PhoneNumber}
+                    className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="details"
+                    className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
+                  >
+                    Detals
+                  </label>
+                  <textarea
+                    type="text"
+                   
+                    id="Details"
+                    onChange={contactForm.handleChange}
+                    value={contactForm.values.Details}
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   />
                 </div>
               </div>
               {/* End Grid */}
-              <div>
-                <label
-                  htmlFor="hs-about-contacts-1"
-                  className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
-                >
-                  Details
-                </label>
-                <textarea
-                  id="hs-about-contacts-1"
-                  name="hs-about-contacts-1"
-                  rows={4}
-                  className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                  defaultValue={""}
-                />
-              </div>
+             
             </div>
             {/* End Grid */}
             <div className="mt-6 grid">
