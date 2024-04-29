@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 
+
 const ManageUser = () => {
 
   const [Data, setData] = useState([])
@@ -76,11 +77,14 @@ const ManageUser = () => {
 
 
   return (
+
+
+    
     <div>
-      <section className="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+      <section className=" bg-gray-50 dark:bg-gray-900 p-3 sm:p-20 mx-auto ">
         <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
           {/* Start coding here */}
-          <div className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+          <div className="bg-wh\ite dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
             <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
               <div className="w-full md:w-1/2">
                 <form className="flex items-center">

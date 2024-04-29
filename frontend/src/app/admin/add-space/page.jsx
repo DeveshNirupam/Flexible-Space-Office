@@ -1,14 +1,59 @@
-
+'use client';
 import React from 'react'
+import { useFormik } from 'formik';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+
+
 
 
 const Form = () => {
+  const router = useRouter();
+
+  const addSpaceForm = useFormik({
+    initialValues: {
+    title : "",
+    area : "",
+    location: "",
+    services : "",
+    facilities: "",
+    price: "",
+    description : ""
+    },
+    onSubmit: (values, { resetForm }) => {
+      console.log(values);
+      // resetForm()
+      // sending request to client
+
+      fetch('http://localhost:5000/space/add', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then((response) => {
+          console.log(response.status);
+          if (response.status === 200) {
+            toast.success('user registered successfully')
+            router.push("/login")
+          } else {
+            toast.error('user registration failed')
+          }
+        }).catch((err) => {
+          console.log(err);
+          toast.error('user registration failed')
+        });
+
+    }
+  })
+
   return (
     <div>
     
   {/* Card Section */}
-  <div className="max-w-4xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-    <form>
+  <div className="max-w-4xl px-4 py-20 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <form onSubmit={addSpaceForm.handleSubmit}>
       {/* Card */}
       <div className="bg-whi\te rounded-xl shadow dark:bg-slate-900">
         <div className="relative h-40 rounded-t-xl bg-[url('https://preline.co/assets/svg/examples/abstract-bg-1.svg')] bg-no-repeat bg-cover bg-center">
@@ -41,7 +86,7 @@ const Form = () => {
           {/* Grid */}
           <div className="space-y-4 sm:space-y-6">
             <div>
-              <label className="sr-only">Product photo</label>
+              <label className="sr-only">Office photo</label>
               <div className="grid sm:flex sm:items-center sm:gap-x-5">
                 <img
                   className="-mt-8 relative z-10 inline-block size-24 mx-auto sm:mx-0 rounded-full ring-4 ring-white dark:ring-gray-800"
@@ -69,7 +114,7 @@ const Form = () => {
                       <polyline points="17 8 12 3 7 8" />
                       <line x1={12} x2={12} y1={3} y2={15} />
                     </svg>
-                    Upload logo
+                    Upload Image
                   </button>
                   <button
                     type="button"
@@ -85,13 +130,31 @@ const Form = () => {
                 htmlFor="af-submit-app-project-name"
                 className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200"
               >
-                Project name
+                Title 
               </label>
               <input
-                id="af-submit-app-project-name"
+                id="title"
                 type="text"
+                onChange={addSpaceForm.handleChange}
+                value={addSpaceForm.values.title}
                 className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                placeholder="Enter project name"
+                placeholder="Enter title name"
+              />
+            </div>
+            <div className="space-y-2">
+              <label
+                htmlFor="af-submit-app-project-name"
+                className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200"
+              >
+                Area
+              </label>
+              <input
+                id="area"
+                type="Number"
+                onChange={addSpaceForm.handleChange}
+                value={addSpaceForm.values.area}
+                className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                placeholder="Enter the area"
               />
             </div>
             <div className="space-y-2">
@@ -99,13 +162,15 @@ const Form = () => {
                 htmlFor="af-submit-project-url"
                 className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200"
               >
-                Project URL
+                Location
               </label>
               <input
-                id="af-submit-project-url"
+                id="location"
                 type="text"
+                onChange={addSpaceForm.handleChange}
+                value={addSpaceForm.values.location}
                 className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                placeholder="https://example.so"
+                placeholder="Enter the address"
               />
             </div>
             <div className="space-y-2">
@@ -152,22 +217,52 @@ const Form = () => {
             </div>
             <div className="space-y-2">
               <label
-                htmlFor="af-submit-app-category"
+                htmlFor="af-submit-app-project-name"
                 className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200"
               >
-                Category
+                Services
               </label>
-              <select
-                id="af-submit-app-category"
-                className="py-2 px-3 pe-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+              <input
+                id="services"
+                type="text"
+                onChange={addSpaceForm.handleChange}
+                value={addSpaceForm.values.services}
+                className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                placeholder="Enter services name"
+              />
+            </div>
+            <div className="space-y-2">
+              <label
+                htmlFor="af-submit-app-project-name"
+                className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200"
               >
-                <option selected="">Select a category</option>
-                <option>Ecommerce</option>
-                <option>Finance</option>
-                <option>Marketplace</option>
-                <option>Social</option>
-                <option>Others</option>
-              </select>
+                Facilities
+              </label>
+              <input
+                id="facilities"
+                type="text"
+                onChange={addSpaceForm.handleChange}
+                value={addSpaceForm.values.facilities}
+                className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                placeholder="Enter facilities name"
+              />
+            </div>
+           
+            <div className="space-y-2">
+              <label
+                htmlFor="af-submit-app-project-name"
+                className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200"
+              >
+                Price
+              </label>
+              <input
+                id="price"
+                type="text"
+                onChange={addSpaceForm.handleChange}
+                value={addSpaceForm.values.price}
+                className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                placeholder="Enter price"
+              />
             </div>
             <div className="space-y-2">
               <label
@@ -177,10 +272,13 @@ const Form = () => {
                 Description
               </label>
               <textarea
-                id="af-submit-app-description"
+                id="description"
                 className="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                 rows={6}
-                placeholder="A detailed summary will better explain your products to the audiences. Our users will see this in your dedicated product page."
+                type="text"
+                onChange={addSpaceForm.handleChange}
+                value={addSpaceForm.values.description}
+                placeholder="A detailed summary will better explain your property to the audiences. Our users will see this in your dedicated property page."
                 defaultValue={""}
               />
             </div>
@@ -188,10 +286,10 @@ const Form = () => {
           {/* End Grid */}
           <div className="mt-5 flex justify-center gap-x-2">
             <button
-              type="button"
+              type="submit"
               className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
             >
-              Submit your project
+              Submit your data
             </button>
           </div>
         </div>

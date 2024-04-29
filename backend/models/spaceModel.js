@@ -3,11 +3,11 @@ const {model, Schema} = require('../connection');
 const mySchema = new Schema({
     title : String,
     area : Number,
-    address: String,
+    location: String,
     services : String,
     facilities: String,
-    accessibility: String,
     price: Number,
+    description : String,
 });
 
 module.exports = model('flexiblespaces', mySchema);
