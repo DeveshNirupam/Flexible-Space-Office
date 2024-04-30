@@ -8,20 +8,19 @@ const UserRouter = require("./routers/userRouter")
 const SpaceRouter = require("./routers/spaceRouter")
 const BookingRouter = require("./routers/bookingrouter")
 const ContactRouter = require("./routers/contactRouter")
+const utilRouter = require("./routers/util")
 
 app.use(express.json())
-app.use(cors( {
+app.use(cors({
     origin: ["http://localhost:3000"]
 }))
 
 app.use("/user", UserRouter)
 app.use("/space", SpaceRouter)
 app.use("/bookingspaces", BookingRouter)
-app.use("/contact", ContactRouter )
+app.use("/contact", ContactRouter)
+app.use("/util", utilRouter)
 
-
-
-
-app.listen(port,() => {
+app.listen(port, () => {
     console.log("server started");
 })

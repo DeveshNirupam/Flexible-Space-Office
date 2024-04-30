@@ -4,6 +4,7 @@ const mySchema = new Schema({
     title : String,
     area : Number,
     location: String,
+    image: String,
     services : String,
     facilities: String,
     price: Number,
