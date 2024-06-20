@@ -451,10 +451,10 @@ const Signup = () => {
             className="h-6 mr-3 sm:h-9"
             alt="Landwind Logo"
           />
-         FlexSpaceFow
+         Felexible office spaces
         </a>
         <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
-          © 2021-2022 FlexSpaceFlow™. All Rights Reserved.
+          © 2021-2022 Felexible office spaces™. All Rights Reserved.
           
           .
         </span>
