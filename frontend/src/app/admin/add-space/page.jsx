@@ -245,22 +245,7 @@ const AddSpace = () => {
                     placeholder="Enter services name"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label
-                    htmlFor="af-submit-app-project-name"
-                    className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200"
-                  >
-                    Facilities
-                  </label>
-                  <input
-                    id="facilities"
-                    type="text"
-                    onChange={addSpaceForm.handleChange}
-                    value={addSpaceForm.values.facilities}
-                    className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                    placeholder="Enter facilities name"
-                  />
-                </div>
+                
 
                 <div className="space-y-2">
                   <label
