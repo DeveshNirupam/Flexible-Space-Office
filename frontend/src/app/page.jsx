@@ -15,7 +15,7 @@ const Home = () => {
             alt="Landwind Logo"
           />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            FlexSpaceFlow
+            FLEXIBLE OFFICE SPACES
           </span>
         </a>
         <div className="flex items-center lg:order-2">
@@ -136,11 +136,11 @@ const Home = () => {
     <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
       <div className="mr-auto place-self-center lg:col-span-7">
         <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
-          Welcome to <u>FlexSpaceFlow</u> <br />  Redefining workspaces
+          Welcome to <u>FLEXIBLE OFFICE SPACES</u> <br />  Redefining workspaces
          
         </h1>
         <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-        Welcome to the future of work. Discover a new way to work with flexible office spaces designed to inspire creativity, foster collaboration, and elevate productivity. At FlexSpaceFlow , we're committed to providing you with the perfect environment to thrive in.
+        Welcome to the future of work. Discover a new way to work with flexible office spaces designed to inspire creativity, foster collaboration, and elevate productivity. At Felexible office spaces , we're committed to providing you with the perfect environment to thrive in.
         </p>
         <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
           <a
@@ -811,7 +811,21 @@ const Home = () => {
               Devesh Nirupam
             </div>
             <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
-              CEO at FlexSpaceFlow
+              CEO at Flexible office spaces 
+            </div>
+          </div>
+         
+          <img
+            className="w-6 h-6 rounded-full"
+            src="data:image/jpeg;base64,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"
+            alt="profile picture"
+          />
+          <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+            <div className="pr-3 font-medium text-gray-900 dark:text-white">
+              Shahwar khan
+            </div>
+            <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
+              Chair Man of Flexible office spaces
             </div>
           </div>
         </figcaption>
@@ -827,11 +841,10 @@ const Home = () => {
           Designed for professionals like yours
         </h2>
         <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-          Here at FlexSpaceFlow the focus is to make work easier and more convenient for everyone. These spaces are designed to be adaptable, so they can change according to what people need.
+          Here at Felexible office spaces the focus is to make work easier and more convenient for everyone. These spaces are designed to be adaptable, so they can change according to what people need.
         </p>
       </div>
-      
-    </div>
+      </div>
   </section>
   {/* End block */}
   {/* Start block */}
@@ -855,7 +868,7 @@ const Home = () => {
               aria-expanded="true"
               aria-controls="accordion-flush-body-1"
             >
-              <span>Who can benefit from flexspaceFlow ?</span>
+              <span>Who can benefit from Felexible office spaces ?</span>
               <svg
                 data-accordion-icon=""
                 className="w-6 h-6 rotate-180 shrink-0"
@@ -878,7 +891,7 @@ const Home = () => {
           >
             <div className="py-5 border-b border-gray-200 dark:border-gray-700">
               <p className="mb-2 text-gray-500 dark:text-gray-400">
-              FlexSpaceFlow is suitable for a wide range of professionals and businesses, including freelancers, startups, remote workers, small businesses, and larger corporations. It offers solutions for those seeking agility, cost-effectiveness, and community engagement in their workspace.
+              Felexible office spaces is suitable for a wide range of professionals and businesses, including freelancers, startups, remote workers, small businesses, and larger corporations. It offers solutions for those seeking agility, cost-effectiveness, and community engagement in their workspace.
               </p>
               
             </div>
@@ -1216,10 +1229,10 @@ const Home = () => {
             className="h-6 mr-3 sm:h-9"
             alt="Landwind Logo"
           />
-         FlexSpaceFow
+         Felexible office spaces
         </a>
         <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
-          © 2021-2022 FlexSpaceFlow™. All Rights Reserved.
+          © 2021-2022 Felexible office spaces™. All Rights Reserved.
           
           .
         </span>
