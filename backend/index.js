@@ -21,6 +21,8 @@ app.use("/bookingspaces", BookingRouter)
 app.use("/contact", ContactRouter)
 app.use("/util", utilRouter)
 
+app.use(express.static('./static/uploads'))
+
 app.listen(port, () => {
     console.log("server started");
 })
