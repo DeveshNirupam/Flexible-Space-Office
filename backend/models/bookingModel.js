@@ -1,13 +1,10 @@
-const {model, Schema} = require('../connection');
+const { model, Schema, Types } = require('../connection');
 
 const mySchema = new Schema({
-    booking_id : {type:Number, require: true},
-    user_id : {type: String, require: true},
-    property_id : Number,
-    check_in_date : Date,
-    Check_out_date : Date,
-    total_price : Number,
-    booking_status : String,
+    user: { type: Types.ObjectId, ref: 'user' },
+    space: { type: Types.ObjectId, ref: 'flexiblespaces' },
+    bookingDate: { type: Date },
+    createdAt: { type: Date, default: Date.now }
 });
 
 module.exports = model('bookingspaces', mySchema);

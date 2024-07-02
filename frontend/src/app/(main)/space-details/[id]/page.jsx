@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
@@ -48,27 +49,29 @@ const SpaceDetails = () => {
                 </div>
                 {/* End Col */}
                 <div className="sm:order-1">
-                  <p className=" me-3 mb-5 inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-neutral-200">
-                    <span >Location: {spaceData.location}</span>
-                  </p>
-                  <p className="mb-5 inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-neutral-200">
-                   <span >Price: {spaceData.price}</span> 
-                  </p>
+                <div className=" me-3 mb-5 inline-flex items-center text-lg gap-1.5 py-1.5 px-3 rounded-md font-medium bg-gray-100 text-white dark:bg-neutral-800 dark:text-neutral-200">
+                    Title: {spaceData.location}
+                  </div>
+                  <div className=" me-3 mb-5 inline-flex items-center text-lg gap-1.5 py-1.5 px-3 rounded-md font-medium bg-gray-100 text-white dark:bg-neutral-800 dark:text-neutral-200">
+                    Services: {spaceData.location}
+                  </div>
+                  <div className=" me-3 mb-5 inline-flex items-center text-lg gap-1.5 py-1.5 px-3 rounded-md font-medium bg-gray-100 text-white dark:bg-neutral-800 dark:text-neutral-200">
+                    area: {spaceData.location}
+                  </div>
+                  <div className=" me-3 mb-5 inline-flex items-center text-lg gap-1.5 py-1.5 px-3 rounded-md font-medium bg-gray-100 text-white dark:bg-neutral-800 dark:text-neutral-200">
+                    Location: {spaceData.location}
+                  </div>
+                  <div className="mb-5 inline-flex items-center text-lg gap-1.5 py-1.5 px-3 rounded-md  font-medium bg-gray-100 text-white dark:bg-neutral-800 dark:text-neutral-200">
+                   Price: {spaceData.price}
+                  </div>
                 
-                  <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight text-gray-800 dark:text-neutral-200">
-                    <a
-                      className="hover:text-blue-600 dark:text-neutral-300 dark:hover:text-white"
-                      href="#"
-                    >
-                      How to get buy-in and budget for direct hiring
-                    </a>
-                  </h2>
+                 
                   <div className="mt-5">
-                    <a
-                      className="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500"
-                      href="#"
+                    <Link
+                      className="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500 text-lg"
+                      href={'/booking/'+id}
                     >
-                      Read more
+                      Book Now
                       <svg
                         className="flex-shrink-0 size-4"
                         xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +86,7 @@ const SpaceDetails = () => {
                       >
                         <path d="m9 18 6-6-6-6" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 {/* End Col */}

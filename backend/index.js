@@ -17,7 +17,7 @@ app.use(cors({
 
 app.use("/user", UserRouter)
 app.use("/space", SpaceRouter)
-app.use("/bookingspaces", BookingRouter)
+app.use("/booking", BookingRouter)
 app.use("/contact", ContactRouter)
 app.use("/util", utilRouter)
 
