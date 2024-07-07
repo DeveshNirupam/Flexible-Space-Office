@@ -22,8 +22,7 @@ const Browse = () => {
 
   useEffect(() => {
     fetchSpaceData();
-  }, [])
-
+  }, []);
 
   const displaySpaces = () => {
     return spaceList.map(space => (

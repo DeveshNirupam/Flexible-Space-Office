@@ -1,8 +1,9 @@
 'use client';
 import axios from 'axios';
 import { useFormik } from 'formik';
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import React, { useState } from 'react'
+import toast from 'react-hot-toast';
 
 const Booking = () => {
 
@@ -10,19 +11,25 @@ const Booking = () => {
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem('user')));
 
+  const router = useRouter();
+
   const bookingForm = useFormik({
     initialValues: {
       bookingDate: ''
     },
     onSubmit: async (values) => {
-
       const res = await axios.post('http://localhost:5000/booking/add', {
         bookingDate: values.bookingDate,
         user: currentUser._id,
         space: id
       });
       console.log(res.status);
-
+      if (res.status === 200) {
+        toast.success('Booking Successfull');
+        router.push('/user/booked-spaces');
+      } else {
+        toast.error('Booking Failed');
+      }
     }
   })
 

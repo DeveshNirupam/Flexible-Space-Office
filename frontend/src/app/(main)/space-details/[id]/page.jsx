@@ -49,14 +49,14 @@ const SpaceDetails = () => {
                 </div>
                 {/* End Col */}
                 <div className="sm:order-1">
-                <div className=" me-3 mb-5 inline-flex items-center text-lg gap-1.5 py-1.5 px-3 rounded-md font-medium bg-gray-100 text-white dark:bg-neutral-800 dark:text-neutral-200">
-                    Title: {spaceData.location}
+                <div className=" me-3 mb-5 inline-flex items-center text-5xl gap-1.5 py-1.5 px-3 rounded-md font-bold text-white ">
+                    {spaceData.title}
                   </div>
                   <div className=" me-3 mb-5 inline-flex items-center text-lg gap-1.5 py-1.5 px-3 rounded-md font-medium bg-gray-100 text-white dark:bg-neutral-800 dark:text-neutral-200">
-                    Services: {spaceData.location}
+                    Services: {spaceData.services}
                   </div>
                   <div className=" me-3 mb-5 inline-flex items-center text-lg gap-1.5 py-1.5 px-3 rounded-md font-medium bg-gray-100 text-white dark:bg-neutral-800 dark:text-neutral-200">
-                    area: {spaceData.location}
+                    area: {spaceData.area}
                   </div>
                   <div className=" me-3 mb-5 inline-flex items-center text-lg gap-1.5 py-1.5 px-3 rounded-md font-medium bg-gray-100 text-white dark:bg-neutral-800 dark:text-neutral-200">
                     Location: {spaceData.location}
