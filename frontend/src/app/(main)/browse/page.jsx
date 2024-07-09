@@ -29,20 +29,21 @@ const Browse = () => {
       <Link href={"/space-details/" + space._id} className="group">
         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
           <img
-            src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+            src={'http://localhost:5000/' + space.image}
             alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
             className="h-full w-full object-cover object-center group-hover:opacity-75"
           />
         </div>
-        <h3 className="mt-4 text-lg text-gray-700 font-bold">{space.title}</h3>
-        <p className="mt-1 text-lg font-medium text-gray-900">₹{space.price}</p>
+        <h3 className="mt-4 text-lg text-gray-400 font-bold">{space.title}</h3>
+        <h3 className="mb-4 text-md text-gray-400">{space.location}</h3>
+        <p className="mt-1 text-lg font-medium text-gray-300">₹{space.price}</p>
       </Link>
     ))
   }
 
   return (
     <div>
-      <div className="bg-white">
+      <div className="">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <>
             {/* Hero */}

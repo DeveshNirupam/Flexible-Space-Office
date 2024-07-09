@@ -1,4 +1,5 @@
 'use client';
+import useAppContext from '@/context/AppContext';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
 import React from 'react'
@@ -8,6 +9,8 @@ import * as Yup from 'yup'
 const Login = () => {
 
   const router = useRouter();
+
+  const { setCurrentUser, setLoggedIn } = useAppContext();
 
   const loginValidationSchema = Yup.object().shape({
     email: Yup.string().email('ye kaisa email hai').required('email nhi hai tumhara'),
@@ -38,6 +41,8 @@ const Login = () => {
             response.json()
               .then((data) => {
                 localStorage.setItem('user', JSON.stringify(data));
+                setCurrentUser(data);
+                setLoggedIn(true);
                 toast.success('user loggedIn successfully');
                 router.push('/browse');
               }).catch((err) => {
