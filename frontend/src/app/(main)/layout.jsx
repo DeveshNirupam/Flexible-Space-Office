@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from './navbar';
+// import Navbar from './navbar';
 
 const MainLayout = ({ children }) => {
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             {children}
         </>
     )

@@ -36,6 +36,18 @@ router.delete('/delete/:id',(req,res) =>{
 
 })
 
+router.put('/update/:id', (req, res) => {
+    console.log(req.body, req.params.id);
+    Model.findByIdAndUpdate(req.params.id, req.body)
+        .then((result) => {
+            res.status(200).json(result);
+      
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 router.post("/authenticate", (req,res) => {
     
     Model.findOne(req.body)
@@ -51,6 +63,14 @@ router.post("/authenticate", (req,res) => {
     });
 });
 
+router.get('/getbymail/:email' , (req,res) => {
+    Model.findOne({email:req.params.email})
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        res.status(500).json(err);
+    });
+})
 
 module.exports = router;
 
