@@ -75,10 +75,12 @@ const ForgotPassword = () => {
         }
     });
     return (
+        
+        
         <div>
-            <div className=' d-flex justify-content-center' style={{marginTop:"110px"}}>
+            <div className=' d-flex justify-content-center ' >
                 <div className='w-50 px-5'>
-                    <div className="mb-3">
+                    <div className="mb-3 ">
                         <label htmlFor="exampleInputEmail1" className="form-label">
                             Email address
                         </label>

@@ -1,11 +1,14 @@
 import React from 'react'
-// import Navbar from './navbar';
+import Navbar from './navbar';
+import Footer from './footer';
 
 const MainLayout = ({ children }) => {
     return (
         <>
-            {/* <Navbar /> */}
+            {/* { <Navbar /> } */}
             {children}
+            { <Footer /> }
+             
         </>
     )
 }
