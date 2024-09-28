@@ -44,7 +44,11 @@ const Login = () => {
                 setCurrentUser(data);
                 setLoggedIn(true);
                 toast.success('user loggedIn successfully');
-                router.push('/browse');
+                if(data.role === 'admin'){
+                  router.push('/admin/add-space');
+                }else{
+                  router.push('/browse');
+                }
               }).catch((err) => {
                 console.log(err);
                 toast.error('user login failed')

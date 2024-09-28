@@ -69,7 +69,7 @@ const SpaceDetails = () => {
                   <div className="mt-5">
                     <Link
                       className="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500 text-lg"
-                      href={'/booking/'+id}
+                      href={'/user/booking/'+id}
                     >
                       Book Now
                       <svg
