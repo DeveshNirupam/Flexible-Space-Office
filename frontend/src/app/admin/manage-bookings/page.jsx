@@ -38,11 +38,8 @@ const ManageBookings = () => {
                                     <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
                                         <div>
                                             <h2 className="text-xl font-semibold text-gray-800 dark:text-neutral-200">
-                                                Users
+                                                Booked Spaces
                                             </h2>
-                                            <p className="text-sm text-gray-600 dark:text-neutral-400">
-                                                Add users, edit and more.
-                                            </p>
                                         </div>
                                         <div>
                                             <div className="inline-flex gap-x-2">
@@ -86,7 +83,7 @@ const ManageBookings = () => {
                                                     className="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start"
                                                 >
                                                     <div className="flex items-center gap-x-2">
-                                                        <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                                                        <span className="ps-5 text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
                                                             Name
                                                         </span>
                                                     </div>
@@ -132,7 +129,7 @@ const ManageBookings = () => {
                                             {
                                                 bookings.map((booking) => (
                                                     <tr>
-                                                        <td className="size-px whitespace-nowrap">
+                                                        <td className="size-px ps-5 whitespace-nowrap">
                                                             <div className="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3">
                                                                 <div className="flex items-center gap-x-3">
                                                                     <img

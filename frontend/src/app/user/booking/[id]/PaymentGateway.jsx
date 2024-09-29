@@ -49,10 +49,10 @@ const PaymentGateway = ({email}) => {
             <form onSubmit={handleSubmit}>
                 <h1 order={3} my={30} mx="auto">Secure Payment Gateway</h1>
                 <PaymentElement />
-                <button disabled={!stripe} type="submit" variant='filled' mt={20}>Submit</button>
+                <button className='py-2 px-3 rounded mt-4 bg-green-600 text-white' disabled={!stripe} type="submit" variant='filled' mt={20}>Submit</button>
             </form>
         </div>
     )
 }
 
-export default PaymentGateway
+export default PaymentGateway;

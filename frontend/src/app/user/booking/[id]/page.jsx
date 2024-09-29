@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from '@stripe/react-stripe-js';
+import PaymentGateway from './PaymentGateway';
 
 const appearance = {
   theme: "day",
@@ -34,7 +35,7 @@ const Booking = () => {
       })
       .then((data) => {
         console.log(data);
-        setCarDetails(data);
+        setSpaceDetails(data);
       })
       .catch((err) => {
         console.log(err);
@@ -43,22 +44,12 @@ const Booking = () => {
 
   useEffect(() => {
     fetchSpaceDetails();
-  }, [])
-
-  const bookSpace = () => {
-    axios.post('http://localhost:5000/booking/add', {
+    sessionStorage.setItem('bookingDetails', JSON.stringify({
       bookingDate: bookingDateRef.current.value,
       user: currentUser._id,
       space: id
-    })
-      .then((result) => {
-        toast.success('Booking Successfull');
-        router.push('/user/booked-spaces');
-      }).catch((err) => {
-        console.log(err);
-        toast.error('Booking Failed');
-      });
-  }
+    }));
+  }, [])
 
   const getPaymentIntent = async () => {
 
@@ -81,7 +72,7 @@ const Booking = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount: carDetails.price,
+          amount: spaceDetails.price,
           customerData: shipping,
         }),
       }
@@ -139,7 +130,7 @@ const Booking = () => {
                   clientSecret,
                   appearance
                 }}>
-                  <PaymentGateway email={emailRef.current.value} spaceDetails={spaceDetails} />
+                  <PaymentGateway email={currentUser.email} spaceDetails={spaceDetails} />
                 </Elements>
               )
             }
